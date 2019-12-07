@@ -1,8 +1,6 @@
 # JpStations
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jp_stations`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Provide All Station Data in Japan.
 
 ## Installation
 
@@ -22,22 +20,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Load Library
+```
+require 'jp_stations'
+```
 
-## Development
+### Search for station names by kanji and hiragana
+```
+irb(main):001:0> stations = JpStations::List.find('渋谷')
+=> [#<JpStations::List:0x00007fb6cf8b0b68 @kanji="高座渋谷駅", @kana="こうざしぶやえき">,
+#<JpStations::List:0x00007fb6cf8b0b40 @kanji="渋谷駅", @kana="しぶやえき">]
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+irb(main):002:0> stations[1].kana
+=> "しぶやえき"
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+irb(main):003:0> stations[1].kanji
+=> "渋谷駅"
+```
 
-## Contributing
+### Get All Station Data In Japan
+```
+irb(main):001:0> stations = JpStations::List.all
+=> [#<JpStations::List:0x00007faeb8e94b70 @kanji="相生駅", @kana="あいおいえき">,
+#<JpStations::List:0x00007faeb8e94b48 @kanji="相老駅", @kana="あいおいえき">,
+#<JpStations::List:0x00007faeb8e94b20 @kanji="相生山駅", @kana="あいおいやまえき">,
+#<JpStations::List:0x00007faeb8e94af8 @kanji="相賀駅", @kana="あいがえき">,
+...
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jp_stations. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+```
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the JpStations project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/jp_stations/blob/master/CODE_OF_CONDUCT.md).
+## Copyright
+Copyright (c) 2019 hatsu38.
+This program is free software under MIT license.
