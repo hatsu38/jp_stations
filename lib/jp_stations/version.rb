@@ -1,0 +1,3 @@
+module JpStations
+  VERSION = "0.1.0"
+end
