@@ -1,0 +1,16 @@
+Metrics/BlockLength:
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 10
+  Exclude:
+    - 'spec/*.rb'
+    - 'jp_stations.gemspec'
+
+LineLength:
+  Max: 90
+
+Style/Documentation:
+  Enabled: false

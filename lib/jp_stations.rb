@@ -1,4 +1,4 @@
-require "jp_stations/version"
+require 'jp_stations/version'
 require 'yaml'
 
 module JpStations
