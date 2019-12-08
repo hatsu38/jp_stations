@@ -2,6 +2,12 @@
 
 Provide All Station Data in Japan.
 
+There are about 9000 stations
+
+RubyGems Link
+
+https://rubygems.org/gems/jp_stations
+
 ## Installation
 
 Add this line to your application's Gemfile:
